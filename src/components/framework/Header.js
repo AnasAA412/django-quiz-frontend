@@ -1,5 +1,6 @@
-import { AppBar, Toolbar, Typography } from "@material-ui/core";
+import { AppBar, Button, Toolbar, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -7,11 +8,14 @@ const useStyles = makeStyles((theme) => ({
   },
   toolbarTitle: {
     flexGrow: 1,
-  }
+  },
 }));
 
 export default function Header() {
   const classes = useStyles();
+  
+  
+
   return (
     <div className={classes.root}>
       <AppBar position="static" color="default" elevation={0}>
@@ -23,6 +27,7 @@ export default function Header() {
           >
             Quizzes
           </Typography>
+         
         </Toolbar>
       </AppBar>
     </div>
