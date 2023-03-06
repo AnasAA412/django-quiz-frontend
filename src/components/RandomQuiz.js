@@ -6,6 +6,7 @@ import Footer from "./framework/Footer";
 import ReactSwitch from "react-switch";
 import { Tooltip as ReactTooltip } from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
+import Info from "../assets/info.png"
 
 // MaterialUI
 import Button from "@material-ui/core/Button";
@@ -126,11 +127,11 @@ export const RandomQuiz = () => {
         <Toggle />
       </div>
 
-      <a className="my-anchor-element-class" style={{padding:30, marginTop: 50}}>Hints: </a>
+      <a className="my-anchor-element-class" style={{padding:30, marginTop: 50}}>Hints: <img src={Info} alt="React Logo" /></a>
       <ReactTooltip
         // Don't forget the `.`!
         anchorSelect=".my-anchor-element-class"
-        content="Hello world!"
+        content="select any one option!!!"
       />
 
       <Container component="main" maxWidth="xs">
