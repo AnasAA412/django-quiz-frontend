@@ -4,6 +4,8 @@ import ConnectApi from "../api/ConnectApi";
 import Header from "./framework/Header";
 import Footer from "./framework/Footer";
 import ReactSwitch from "react-switch";
+import { Tooltip as ReactTooltip } from "react-tooltip";
+import "react-tooltip/dist/react-tooltip.css";
 
 // MaterialUI
 import Button from "@material-ui/core/Button";
@@ -116,20 +118,26 @@ export const RandomQuiz = () => {
     }
   }
 
-  
   return (
     <React.Fragment>
       <Header />
       <div className="app" style={{ padding: 50, textAlign: "right" }}>
         <h4>Change Language:</h4>
-        <Toggle/>
+        <Toggle />
       </div>
+
+      <a className="my-anchor-element-class" style={{padding:30, marginTop: 50}}>Hints: </a>
+      <ReactTooltip
+        // Don't forget the `.`!
+        anchorSelect=".my-anchor-element-class"
+        content="Hello world!"
+      />
 
       <Container component="main" maxWidth="xs">
         <div className={classes.paper}>
           {dataState.data.map(({ title, answer }, i) => (
             <div key={i}>
-              <Typography component="h1" variant="h5" >
+              <Typography component="h1" variant="h5">
                 {title}
               </Typography>
               {answer.map(({ answer_text, id }) => (
