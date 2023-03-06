@@ -60,7 +60,18 @@ export const QuizSelect = () => {
   return (
     <React.Fragment>
       <Header />
-      
+      <Container maxWidth="sm" component="main" className={classes.heroContent}>
+        <Typography
+          component="h1"
+          variant="h2"
+          align="center"
+          color="textPrimary"
+          gutterBottom
+        >
+          Online Quiz Challenge
+        </Typography>
+       
+      </Container>
       <Container maxWidth="md" component="main">
         <Grid container spacing={5} alignItems="flex-end">
           {dataState.data.map((q) => (
