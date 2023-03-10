@@ -2,6 +2,7 @@ import React from "react";
 import Header from "./framework/Header";
 import Footer from "./framework/Footer";
 import ConnectApi from "../api/ConnectApi";
+import { useParams } from "react-router-dom";
 
 // MaterialUI
 import Container from "@material-ui/core/Container";
@@ -53,6 +54,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export const QuizSelect = () => {
+  
+  
   const classes = useStyles();
   const API_URL = "http://127.0.0.1:8000/quiz/";
   const [dataState] = ConnectApi(API_URL);
@@ -95,7 +98,7 @@ export const QuizSelect = () => {
                       variant="subtitle1"
                       align="center"
                     >
-                      50 questions
+                      10 questions
                     </Typography>
                   </ul>
                 </CardContent>
@@ -104,7 +107,7 @@ export const QuizSelect = () => {
                     fullWidth
                     variant="outlined"
                     color="primary"
-                    href="http://localhost:3000/r/django"
+                    href="http://127.0.0.1:3000/r/Django/"
                   >
                     Start Quiz
                   </Button>

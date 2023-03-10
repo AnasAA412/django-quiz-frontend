@@ -1,9 +1,10 @@
+
+
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ConnectApi from "../api/ConnectApi";
 import Header from "./framework/Header";
 import Footer from "./framework/Footer";
-import ReactSwitch from "react-switch";
 import { Tooltip as ReactTooltip } from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
 import Info from "../assets/info.png"
@@ -39,7 +40,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export const RandomQuiz = () => {
-  const [checked, setChecked] = useState(true);
   const classes = useStyles();
   const { topic } = useParams();
   const API_URL = "http://127.0.0.1:8000/quiz/r/" + topic;
@@ -86,9 +86,9 @@ export const RandomQuiz = () => {
     let o = Object.values(y);
     let p = Object.values(answer);
     if (arrayEquals(o, p)) {
-      setAnswerCheck(true);
+        setAnswerCheck(true);
     } else {
-      setAnswerCheck(false);
+        setAnswerCheck(false);
     }
   };
 
@@ -133,7 +133,6 @@ export const RandomQuiz = () => {
         anchorSelect=".my-anchor-element-class"
         content="select any one option!!!"
       />
-
       <Container component="main" maxWidth="xs">
         <div className={classes.paper}>
           {dataState.data.map(({ title, answer }, i) => (
@@ -176,3 +175,6 @@ export const RandomQuiz = () => {
 };
 
 export default RandomQuiz;
+
+
+
